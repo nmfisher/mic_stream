@@ -77,7 +77,7 @@ class MicStream {
         AudioFormat audioFormat: _DEFAULT_AUDIO_FORMAT}) async {
       if (sampleRate < _MIN_SAMPLE_RATE || sampleRate > _MAX_SAMPLE_RATE)
         throw (RangeError.range(sampleRate, _MIN_SAMPLE_RATE, _MAX_SAMPLE_RATE));
-      //if (!(await permissionStatus)) throw (PlatformException);
+      // if (!(await permissionStatus)) throw Exception();
     
       _microphone = _microphone ?? _microphoneEventChannel.receiveBroadcastStream([
           audioSource.index,
